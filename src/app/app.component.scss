@@ -1,0 +1,21 @@
+@import "../_variables";
+
+
+
+main {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+
+  @media #{$large-and-up} {
+    padding-left: 300px;
+  }
+
+  .container {
+    width: 90% !important;
+
+    @media #{$large-and-up} {
+      margin: 0 3%;
+    }
+  }
+}
+

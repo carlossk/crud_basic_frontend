@@ -1,0 +1,92 @@
+
+<div class="section">
+    <h5 class="light">Hero information -Firebase-</h5>
+
+    <div class="row m-valign-wrapper">
+        <mz-input-container class="col s12 m4">
+            <i mz-icon-mdi mz-input-prefix
+              [icon]="'group'">
+            </i>
+            <input [(ngModel)]="hero.real_name" mz-input
+            [id]="'name'"
+            [label]="'Real name:'"
+            type="text">
+
+        </mz-input-container>
+        <mz-input-container class="col s12 m4">
+            <i mz-icon-mdi mz-input-prefix
+              [icon]="'group'">
+            </i>
+            <input mz-input [(ngModel)]="hero.name"
+              [label]="'Name'"
+              type="text">
+
+        </mz-input-container>
+        <mz-input-container class="col s12 m4">
+            <i mz-icon-mdi mz-input-prefix
+              [icon]="'group'">
+            </i>
+            <input mz-input [(ngModel)]="hero.super_power"
+              [label]="'Super power'"
+              type="text">
+
+        </mz-input-container>
+
+    </div>
+    <div class="row m-valign-wrapper">
+      <mz-textarea-container class="col s12 m12">
+        <i mz-icon-mdi mz-textarea-prefix
+          [icon]="'message-reply-text'">
+        </i>
+        <textarea mz-textarea [(ngModel)]="hero.biography"
+          [label]="'Biography'"
+          length="150"></textarea>
+      </mz-textarea-container>
+
+    </div>
+
+    <div class="center row ">
+      <div class=" col  m6">
+
+        <button   mz-button (click)="hero.id? updateData():saveData()">
+
+          {{hero.id? 'Update':'Save'}}
+
+
+        </button>
+      </div>
+
+      <div class="col m6">
+          <button   mz-button (click)="cancel()">
+              Cancel
+          </button>
+      </div>
+
+
+</div>
+
+<mz-collection>
+    <mz-collection-header><h4>Heros</h4></mz-collection-header>
+    <mz-collection-item [avatar]="true" mz-collection-link *ngFor="let item of heroData"   >
+        <a href="javascript:void(0)" (click)="setHero(item)" mz-secondary-content><i mz-icon-mdi [icon]="'pencil'"></i></a>
+    <Strong>ID:</Strong>  {{item.id}}
+      <div class="title">Real name: <strong>{{item.real_name}}</strong></div>
+      <div>Name: <strong>{{item.name}}</strong> </div>
+      <div>Super power: <strong>{{item.super_power}}</strong> </div>
+      <div>Biography: <strong> {{item.biography}} </strong> </div>
+      <br>
+      <div class="center row ">
+          <div class="col m6">
+              <button class="red"  mz-button (click)="deleteData(item)">
+                  Delete
+              </button>
+          </div>
+    </div>
+
+    </mz-collection-item>
+
+  </mz-collection>
+
+</div>
+
+

@@ -1,0 +1,38 @@
+<header>
+  <mz-sidenav #sidenav
+    [id]="'sidenav'"
+    [backgroundClass]="'sidenav-background'"
+    [closeOnClick]="true"
+    [collapseButtonId]="'btn-sidenav'"
+    [fixed]="true">
+
+    <mz-sidenav-header>
+
+     <img class="angular-logo" src="assets/angular.png">
+        <!-- <img class="materialize-logo" src="assets/materialize-logo.png"> -->
+        <!-- <img class="materialize-logo" src="assets/materialize-logo.png"> -->
+      <h5 class="title-name center-align white-text">CRUD Basic</h5>
+
+    </mz-sidenav-header>
+
+    <mz-sidenav-collapsible routerLink="firebase" >
+      <mz-sidenav-collapsible-header>
+        <span class="grey-text">CRUD Firebase</span>
+      </mz-sidenav-collapsible-header>
+
+
+    </mz-sidenav-collapsible>
+    <mz-sidenav-collapsible routerLink="laravel" >
+        <mz-sidenav-collapsible-header>
+          <span class="grey-text">CRUD Laravel</span>
+        </mz-sidenav-collapsible-header>
+      </mz-sidenav-collapsible>
+  </mz-sidenav>
+  <button mz-button
+    class="sidenav-button hide-on-large-only"
+    id="btn-sidenav"
+    [float]="true"
+    [large]="true">
+    <i mz-icon-mdi [icon]="'menu'"></i>
+  </button>
+</header>
